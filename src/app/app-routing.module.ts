@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 // 路由配置
 const routes: Routes = [
   {path: '', redirectTo: '/blog', pathMatch: 'full' },
+  { path: 'blog', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) },
  // { path: '**', component: PageNotFoundComponent }
 ];
 
