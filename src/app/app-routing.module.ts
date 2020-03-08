@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path: '', redirectTo: '/blog', pathMatch: 'full' },
   { path: 'blog', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) },
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
  // { path: '**', component: PageNotFoundComponent }
 ];
 
