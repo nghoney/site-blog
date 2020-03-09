@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {IdleMonitorService, isScullyGenerated, isScullyRunning} from '@scullyio/ng-lib';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'site-blog';
+  currentState = isScullyRunning()
+    ? 'rendering inside scully'
+    : isScullyGenerated()
+    ? 'Loaded from static HTML'
+    : 'SPA mode';
+  constructor() {}
 }

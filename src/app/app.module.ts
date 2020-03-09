@@ -1,9 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { ScullyLibModule } from '@scullyio/ng-lib';
-import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {ScullyLibModule} from '@scullyio/ng-lib';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 
 @NgModule({
   declarations: [
@@ -11,8 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    ScullyLibModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    ScullyLibModule.forRoot({useTranferState: true, alwaysMonitor: true}),
   ],
   providers: [],
   bootstrap: [AppComponent]
