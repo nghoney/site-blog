@@ -1,19 +1,17 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-
 import { BlogPostService } from "../service/blog-post.service";
-import { BlogPost } from "../models/blog-post";
+import { BlogPost } from "src/app/models/blog-post";
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"]
+  selector: "app-past-posts",
+  templateUrl: "./past-posts.component.html",
+  styleUrls: ["./past-posts.component.css"]
 })
-export class HomeComponent implements OnInit {
+export class PastPostsComponent implements OnInit {
   loading: boolean = true;
   posts: BlogPost[];
 
-  constructor(private postService: BlogPostService, private router: Router) {}
+  constructor(private postService: BlogPostService) {}
 
   ngOnInit() {
     this.getPosts();
