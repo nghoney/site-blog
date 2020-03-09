@@ -1,0 +1,11 @@
+title: Title (should be replace by scully)
+description: Add some description for the blog overview page here
+publish: false
+author: Edward
+mail: edward@arch.run
+updated: 2020-01-01
+keywords:
+  - Angular
+language: en
+thumbnail: assets/images/bg3.jpg
+thumbnailSmall: assets/images/bg3.jpg
