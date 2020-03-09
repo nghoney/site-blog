@@ -1,0 +1,26 @@
+<!-- Menu -->
+<ng-container *transloco="let t">
+  <nav id="menu" class="is-menu-visible" cdkTrapFocus>
+    <div class="inner">
+      <h2>{{ t('menu') }}</h2>
+      <ul class="links" (click)="menuClicked()">
+        <li>
+          <a routerLink="/">{{ t('home') }}</a>
+        </li>
+        <li>
+          <a href="#about">{{ t('about') }}</a>
+        </li>
+        <li>
+          <a routerLink="/blog">{{ t('blog') }}</a>
+        </li>
+        <li>
+          <a href="#contact">{{ t('contact') }}</a>
+        </li>
+        <li>
+          <a routerLink="/imprint">{{ t('imprint') }}</a>
+        </li>
+      </ul>
+      <a href="#" class="close" (click)="menuClicked()">{{ t('close') }}</a>
+    </div>
+  </nav>
+</ng-container>

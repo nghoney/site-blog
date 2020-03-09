@@ -1,0 +1,42 @@
+<ng-container *transloco="let t; read: 'blogPage'">
+  <section *ngIf="blogPostData$ | async as blogPosts" class="features">
+    <ng-container *ngIf="blogPosts.length; else emptyResultsTemplate">
+      <article *ngFor="let post of blogPosts; let i = index">
+        <a
+          [routerLink]="post.route"
+          *ngIf="post.thumbnailSmall || post.thumbnail"
+          class="image card-image">
+          <img
+            [src]="post.thumbnailSmall || post.thumbnail"
+            [attr.alt]="'thumbnail' | transloco" />
+        </a>
+        <h3 class="major">{{ post.title }}</h3>
+        <p>
+          {{ post.description }}
+        </p>
+        <div
+          *ngIf="post.publishedAt && post.publishedAtUrl"
+          class="published-at"
+        >
+          {{ t('originallyPublishedAt') }}:
+          <a [href]="post.publishedAtUrl">{{ post.publishedAt }}</a>
+          <a [href]="post.publishedAtUrl" class="published-at-link">
+            <img
+              *ngIf="post.publishedAtLogo"
+              class="published-at-logo"
+              [src]="post.publishedAtLogo"
+              alt="Logo of the published page"
+            />
+          </a>
+        </div>
+        <a [routerLink]="post.route" class="special">{{ t('readOn') }}...</a>
+      </article>
+    </ng-container>
+    <ng-template #emptyResultsTemplate>{{ t('listEmpty') }}</ng-template>
+  </section>
+  <ul *ngIf="max || keyword || search" class="actions">
+    <li>
+      <a routerLink="/blog" class="button">{{ t('showAll') }}</a>
+    </li>
+  </ul>
+</ng-container>
