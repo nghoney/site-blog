@@ -14,6 +14,7 @@
     "scully": "scully",
     "scully:watch": "scully serve --watch",
     "scully:serve": "scully serve",
+    "scully:all": "npm run build && npm run scully -- --nw && npm run scully:serve",
     "post": "ng g @scullyio/init:post --metaDataFile='blog-meta.yaml' --target='blog'",
     "deploy:gh-pages": "git subtree push --prefix dist/site-blog origin gh-pages"
   },
@@ -30,6 +31,9 @@
     "@scullyio/init": "0.0.23",
     "@scullyio/ng-lib": "latest",
     "@scullyio/scully": "latest",
+    "marked": "^0.8.0",
+    "ngx-markdown": "^9.0.0",
+    "prismjs": "^1.19.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
