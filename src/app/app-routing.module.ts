@@ -3,10 +3,9 @@ import {RouterModule, Routes} from '@angular/router';
 
 // 路由配置
 const routes: Routes = [
-  {
-    path: 'about',
-    loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
-  },
+  { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule),},
+ { path: 'admin', loadChildren: () => import('./@admin/general/general.module').then(m => m.GeneralModule)},
+    { path: 'admin/posts', loadChildren: () => import('./@admin/posts/posts.module').then(m => m.PostsModule)},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'blog', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) },

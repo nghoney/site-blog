@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="alert alert-success" role="alert" *ngIf="result.status == true">
+          {{ result.message }}
+      </div>
+      <form (ngSubmit)="save(forma.value)" #forma="ngForm">
+        <div class="form-group floating-label-form-group controls">
+            <label for="name">Nombre y Apellidos</label>
+            <input id="name" type="text" name="name" class="form-control"
+                [ngClass]="{'is-valid': !name.invalid, 'is-invalid': name.invalid}" required minlength="4"
+                [(ngModel)]="contact.name" #name="ngModel" placeholder="name">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                <div *ngIf="name.errors.required">
+                    name is required.
+                </div>
+                <div *ngIf="name.errors.minlength">
+                    name must be at least 4 characters long.
+                </div>
+            </div>
+        </div>
+        <div class="form-group floating-label-form-group controls">
+          <label for="email">Email</label>
+          <input id="email" type="text" name="email" class="form-control"
+              [ngClass]="{'is-valid': !email.invalid, 'is-invalid': email.invalid}" required minlength="4"
+              [(ngModel)]="contact.email" #email="ngModel" placeholder="email">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+              <div *ngIf="email.errors.required">
+                  email is required.
+              </div>
+              <div *ngIf="email.errors.minlength">
+                  email must be at least 4 characters long.
+              </div>
+          </div>
+      </div>
+      <div class="form-group selection">
+        <label for="reason">Razón del contacto</label>
+        <select class="form-control" id="reason" [(ngModel)]="contact.reason" [ngModelOptions]="{standalone: true}">
+          <option value="info-cursos">Informaci&oacute;n de cursos</option>
+          <option value="projects">Proyectos</option>
+          <option value="colaboration">Colaboración</option>
+          <option value="others">Otros</option>
+        </select>
+      </div>
+      <div class="form-group floating-label-form-group controls">
+        <label>Mensaje</label>
+        <textarea rows="5" class="form-control" placeholder="Message" id="message" required
+            [(ngModel)]="contact.message" #message="ngModel" [ngModelOptions]="{standalone: true}"></textarea>
+        <p class="help-block text-danger"></p>
+      </div>
+        
+        <br/>
+        <button [disabled]="!forma.valid" type="submit" class="btn btn-info">Enviar</button>
+    </form>
+  </div>
+  <div class="col-lg-4">
+    <!--<blog-sidebar></blog-sidebar>-->
+    <blog-access-direct></blog-access-direct>
+  </div>
+
+</div>
