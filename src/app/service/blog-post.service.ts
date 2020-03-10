@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { HttpHeaders } from "@angular/common/http";
-import { map, catchError } from "rxjs/operators";
-import { ApiService } from "./api.service";
-import { environment } from "../../environments/environment";
-import { BlogPost } from "../models/blog-post";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpHeaders } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
+import { ApiService } from './api.service';
+import { environment } from '../../environments/environment';
+import { BlogPost } from '../models/blog-post';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class BlogPostService {
   constructor(private apiService: ApiService) {}
@@ -21,7 +21,7 @@ export class BlogPostService {
   }
 
   public GetPost(id: string): Observable<BlogPost> {
-    return this.apiService.Get(environment.api.entries + "/" + id).pipe(
+    return this.apiService.Get(environment.api.entries + '/' + id).pipe(
       map(json => {
         return new BlogPost(json);
       })
@@ -33,6 +33,6 @@ export class BlogPostService {
   }
 
   public deletePost(id) {
-    return this.apiService.Delete(environment.api.entries + "/" + id);
+    return this.apiService.Delete(environment.api.entries + '/' + id);
   }
 }

@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PastPostsComponent } from "./past-posts.component";
+import { PastPostsComponent } from './past-posts.component';
 
-describe("PastPostsComponent", () => {
+describe('PastPostsComponent', () => {
   let component: PastPostsComponent;
   let fixture: ComponentFixture<PastPostsComponent>;
 
@@ -18,7 +18,7 @@ describe("PastPostsComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
