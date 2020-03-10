@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { BlogPostService } from 'src/app/service/blog-post.service';
-import { BlogPost } from 'src/app/models/blog-post';
+import { BlogPostService } from 'src/app/shared/service/blog-post.service';
+import { BlogPost } from 'src/app/shared/models/blog-post';
 import { JsonPipe } from '@angular/common';
 
 @Component({

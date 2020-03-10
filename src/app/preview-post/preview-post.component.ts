@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { BlogPost } from '../models/blog-post';
+import { BlogPost } from '../shared/models/blog-post';
 
 @Component({
   selector: 'app-preview-post',

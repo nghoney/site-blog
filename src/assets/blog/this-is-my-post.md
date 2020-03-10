@@ -4,4 +4,6 @@ description: blog description
 publish: false
 ---
 
-# This is my post
+## This is my post
+
+this is a blog template

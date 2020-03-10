@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogPostService } from '../service/blog-post.service';
-import { BlogPost } from 'src/app/models/blog-post';
+import { BlogPostService } from '../shared/service/blog-post.service';
+import { BlogPost } from 'src/app/shared/models/blog-post';
 
 @Component({
   selector: 'app-past-posts',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { BlogPostService } from "../service/blog-post.service";
-import { BlogPost } from "../models/blog-post";
+import { BlogPostService } from "../shared/service/blog-post.service";
+import { BlogPost } from "../shared/models/blog-post";
 
 @Component({
   selector: "app-author-post",

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { ApiService } from './api.service';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { BlogPost } from '../models/blog-post';
 import { Observable } from 'rxjs';
 
